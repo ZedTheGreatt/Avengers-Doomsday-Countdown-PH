@@ -1,0 +1,164 @@
+@font-face {
+  font-family: CountdownHeading;
+  src: url("fonts/montserrat-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: CountdownDigits;
+  src: url("fonts/avenir-arabic-heavy.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: #030604;
+  color: #fff;
+  font-family: CountdownDigits, Arial, sans-serif;
+}
+.screen {
+  position: relative;
+  isolation: isolate;
+  min-height: max(100svh, 220px);
+  overflow: hidden;
+}
+.screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, #000c 0%, #0008 26%, #0004 42%, #0004 60%, #000b 84%, #000e 100%),
+    url("avengers-enhanced.png") 48.3% 60.5% / max(145.5vw, 177.7svh) auto no-repeat;
+}
+.atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.light-ray {
+  position: absolute;
+  top: -18%;
+  left: 40%;
+  width: clamp(5rem, 15vw, 18rem);
+  height: 128%;
+  opacity: .12;
+  transform-origin: 50% 0;
+  mask-image: linear-gradient(90deg, transparent, #000 45%, #000 55%, transparent);
+  background: linear-gradient(180deg, transparent 0%, rgba(205, 255, 184, .28) 24%, rgba(194, 255, 142, .56) 48%, rgba(153, 246, 110, .22) 78%, transparent 100%);
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+.light-ray--left {
+  left: 34%;
+  animation: ray-sweep-left 38s ease-in-out infinite alternate;
+}
+.light-ray--center {
+  left: 45%;
+  width: clamp(4.5rem, 11vw, 14rem);
+  opacity: .23;
+  animation: ray-sweep-center 42s ease-in-out -7s infinite alternate;
+}
+.light-ray--right {
+  left: 55%;
+  width: clamp(5rem, 13vw, 16rem);
+  opacity: .14;
+  animation: ray-sweep-right 48s ease-in-out -13s infinite alternate;
+}
+@keyframes ray-sweep-left {
+  from { transform: translateX(-8px) rotate(-19deg); opacity: .32; }
+  to { transform: translateX(9px) rotate(-15deg); opacity: .44; }
+}
+@keyframes ray-sweep-center {
+  from { transform: translateX(8px) rotate(-11deg); opacity: .32; }
+  to { transform: translateX(-7px) rotate(-7deg); opacity: .43; }
+}
+@keyframes ray-sweep-right {
+  from { transform: translateX(7px) rotate(-4deg); opacity: .23; }
+  to { transform: translateX(-8px) rotate(0deg); opacity: .32; }
+}
+.dust-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .65;
+  mix-blend-mode: screen;
+}
+.clock {
+  --digit: clamp(17px, min(4.0833vw, 7.259svh), 120px);
+  position: absolute;
+  z-index: 2;
+  top: min(59.2%, calc(100% - 3 * var(--digit)));
+  left: 50%;
+  width: min(94vw, calc(var(--digit) * 10.57));
+  transform: translateX(-50%);
+  text-align: center;
+  text-shadow: 0 1px 7px #000a;
+}
+.clock h1 {
+  margin: 0 0 .28em;
+  font-size: calc(var(--digit) * .55);
+  font-weight: 700;
+  letter-spacing: .065em;
+  line-height: 1.12;
+}
+.units {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr) .28fr) minmax(0, 1fr);
+  align-items: start;
+}
+.number, .colon {
+  font-family: CountdownDigits, Arial, sans-serif;
+  font-size: var(--digit);
+  font-weight: 700;
+  line-height: 1.08;
+  font-variant-numeric: tabular-nums;
+}
+.number {
+  letter-spacing: .15em;
+  padding-inline-start: .15em;
+}
+.label {
+  display: block;
+  margin-top: .85em;
+  font-size: max(8px, calc(var(--digit) * .2));
+  letter-spacing: .07em;
+  font-weight: 700;
+}
+.end { display: none; font-size: .8rem; }
+.ended .end { display: block; }
+#sound-toggle {
+  position: absolute;
+  z-index: 3;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: white;
+  background: #060b08b3;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#sound-toggle svg { width: 22px; height: 22px; }
+#sound-toggle .sound-on { display: none; }
+#sound-toggle[aria-pressed="true"] .sound-on { display: block; }
+#sound-toggle[aria-pressed="true"] .sound-off { display: none; }
+#sound-toggle:focus-visible { outline: 2px solid #c9f5a7; outline-offset: 2px; }
+#sound-toggle:disabled { opacity: .5; cursor: default; }
+@media (orientation: portrait) {
+  .clock { --digit: clamp(17px, 8.15vw, 52px); top: 59.2%; }
+}
+@media (max-width: 420px) {
+  .light-ray { filter: blur(12px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .light-ray { animation: none !important; }
+}
