@@ -1,11 +1,9 @@
-# Avengers: Doomsday — Manila Countdown
+# Avengers: Doomsday — Philippines Countdown
 
 A cinematic, fan-made countdown to **Avengers: Doomsday** — premiering **December 16, 2026 at 12:00 AM Philippine time (UTC+8)**.
 
 [![GitHub Pages](https://img.shields.io/badge/Live-GitHub%20Pages-222?logo=github&style=for-the-badge)](https://zedthegreatt.github.io/Avengers-Doomsday-Countdown-PH)
 [![Cloudflare Pages](https://img.shields.io/badge/Live-Cloudflare%20Pages-F38020?logo=cloudflare&style=for-the-badge)](https://avengers-doomsday-countdown-ph.pages.dev/)
-
-<kbd><img src="assets/readme/github-pages.png" alt="GitHub Pages badge" height="32"></kbd> <kbd><img src="assets/readme/cloudflare-pages.png" alt="Cloudflare Pages badge" height="32"></kbd>
 
 ## About
 
