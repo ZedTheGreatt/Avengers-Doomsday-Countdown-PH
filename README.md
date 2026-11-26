@@ -4,8 +4,8 @@ A cinematic countdown to **December 16, 2026 at 12:00 AM Philippine time**.
 
 ## Live sites
 
-- [GitHub Pages](https://zedthegreatt.github.io/Avengers-Doomsday-Countdown-PH/)
-- [Cloudflare Pages](https://avengers-doomsday-countdown-ph.pages.dev/)
+- [![GitHub Pages](https://happycoding.io/tutorials/html/images/github-pages-9.png)](https://zedthegreatt.github.io/Avengers-Doomsday-Countdown-PH/)
+- [![Cloudflare Pages](https://cdn.hashnode.com/res/hashnode/image/upload/v1689783123887/ba865c77-8798-4d7e-b649-304e2a06a122.png)](https://avengers-doomsday-countdown-ph.pages.dev/)
 
 ## Features
 
