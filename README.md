@@ -44,13 +44,9 @@ It features an original Doom-inspired illustration, animated light rays, driftin
 
 ## Screenshot
 
-> Add a screenshot of the live site here:
->
 > ```markdown
 > ![Avengers: Doomsday — Manila Countdown](assets/readme/screenshot.png)
 > ```
->
-> Place the image at `assets/readme/screenshot.png` and uncomment the line above.
 
 ---
 
